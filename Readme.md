@@ -1,7 +1,7 @@
 # Statistical Experiments and Significance Testing
 ---
 
-#1. Pruebas A/B y pruebas de hipótesis
+# 1. Pruebas A/B y pruebas de hipótesis
 
 Basada en el capítulo 3 de _Practical Statistics for Data Scientists_
 
