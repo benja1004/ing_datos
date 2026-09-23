@@ -1,3 +1,6 @@
+# Statistical Experiments and Significance Testing
+---
+
 # Pruebas A/B y pruebas de hipótesis
 
 Basada en el capítulo 3 de _Practical Statistics for Data Scientists_
@@ -110,55 +113,6 @@ Las pruebas de hipótesis complementan esta comparación al evaluar los resultad
 
 Finalmente, una diferencia observada no debe confundirse con una demostración automática de superioridad. El aporte principal de estos temas es aprender a tomar decisiones a partir de evidencia, reconociendo que los resultados de una muestra también están sujetos a variación aleatoria.
 
-## Referencia bibliográfica
-
-Bruce, P., Bruce, A., & Gedeck, P. (2020). _Practical statistics for data scientists: 50+ essential concepts using R and Python_ (2nd ed.). O’Reilly Media.
-
-Secciones consultadas: “A/B Testing”, pp. 88–92, y “Hypothesis Tests”, pp. 93–96. La numeración corresponde a las páginas impresas del libro. Texto adaptado y explicado en español; figuras de elaboración propia.
-
-## Anexo. Ejemplo en Python
-
-Este código utiliza las compras y los totales de la tabla 3-1 del libro (p. 90). Es una ampliación didáctica propia, no una transcripción del código de los autores. Se ejecuta con Python 3 y no requiere paquetes externos. Compara las tasas mediante una prueba z bilateral aproximada, sin corrección de continuidad.
-
-Se supone que los grupos se asignaron al azar y que las observaciones son independientes, con una respuesta binaria por unidad. La aproximación normal es razonable con estos conteos de compras y no compras. La hipótesis nula plantea tasas poblacionales iguales; la alternativa, tasas diferentes. Se fija un nivel de significación de 0,05 antes del análisis.
-
-```python
-from math import sqrt, erfc
-
-compras_a, n_a = 200, 23739
-compras_b, n_b = 182, 22588
-tasa_a = compras_a / n_a
-tasa_b = compras_b / n_b
-alfa = 0.05
-
-# Proporcion comun y error estandar bajo H0
-p = (compras_a + compras_b) / (n_a + n_b)
-error = sqrt(p * (1-p) * (1/n_a + 1/n_b))
-z = (tasa_a - tasa_b) / error
-p_valor = erfc(abs(z) / sqrt(2))
-
-print(f"A: {tasa_a:.3%}; B: {tasa_b:.3%}")
-print(f"Diferencia: {100*(tasa_a-tasa_b):.3f} puntos porcentuales")
-print(f"z: {z:.3f}; valor p: {p_valor:.3f}")
-if p_valor < alfa:
-    print("Se rechaza H0")
-else:
-    print("No se rechaza H0")
-```
-
-### Resultado e interpretación
-
-El resultado es A = 0,842 %, B = 0,806 %, diferencia = 0,037 puntos porcentuales, z = 0,437 y valor p = 0,662. Las diferencias se calculan antes de redondear. Como 0,662 es mayor que 0,05, no se rechaza la hipótesis nula con esta prueba. No se ha demostrado que las tasas sean iguales ni que una opción sea más rentable.
-
-En el código, _p_ estima la proporción común bajo H₀, _error_ mide la variabilidad esperada de la diferencia y _z_ expresa la diferencia en unidades de ese error. La función _erfc_ permite calcular el área de las dos colas de la distribución normal estándar. El valor p no es la probabilidad de que H₀ sea verdadera.
-
-Los métodos y la dirección del contraste importan: una prueba unilateral o un procedimiento de remuestreo pueden producir otro valor p. Este anexo ilustra una elección concreta y complementa la explicación conceptual del capítulo. Archivo ejecutable: [ejemplo_ab_angel.py](ejemplo_ab_angel.py).
-
-# Teoría – Capítulo 3 - Parte 2: Experimentos Estadísticos y Pruebas de Significancia
-
-Este capítulo introduce los fundamentos de las pruebas de significancia estadística, el remuestreo (_resampling_), el valor _p_ y la prueba **t**, herramientas utilizadas para determinar si las diferencias observadas entre grupos pueden atribuirse al azar o representan un efecto estadísticamente significativo.
-
----
 
 # 1. Resampling (Remuestreo)
 
@@ -610,3 +564,54 @@ Conceptos y términos clave para determinar la potencia estadística y el tamañ
 - **Tamaño mínimo del efecto detectable (MDE):** es la magnitud mínima de la diferencia o impacto que esperamos ser capaces de detectar mediante una prueba estadística, como por ejemplo "una mejora del 20 % en las tasas de clics".
 - **Potencia estadística ($1 - \beta$):** es la probabilidad de detectar verdaderamente el tamaño de un efecto dado con un tamaño de muestra determinado, evitando así cometer un **error de Tipo II** (falso negativo).
 - **Nivel de significación ($\alpha$):** el umbral de riesgo o nivel de significación estadística bajo el cual se realizará la prueba, definiendo la máxima probabilidad tolerable de cometer un **error de Tipo I** (falso positivo).
+
+- 
+## Referencia bibliográfica
+
+Bruce, P., Bruce, A., & Gedeck, P. (2020). _Practical statistics for data scientists: 50+ essential concepts using R and Python_ (2nd ed.). O’Reilly Media.
+
+Secciones consultadas: “A/B Testing”, pp. 88–92, y “Hypothesis Tests”, pp. 93–96. La numeración corresponde a las páginas impresas del libro. Texto adaptado y explicado en español; figuras de elaboración propia.
+
+## Anexo. Ejemplo en Python
+
+Este código utiliza las compras y los totales de la tabla 3-1 del libro (p. 90). Es una ampliación didáctica propia, no una transcripción del código de los autores. Se ejecuta con Python 3 y no requiere paquetes externos. Compara las tasas mediante una prueba z bilateral aproximada, sin corrección de continuidad.
+
+Se supone que los grupos se asignaron al azar y que las observaciones son independientes, con una respuesta binaria por unidad. La aproximación normal es razonable con estos conteos de compras y no compras. La hipótesis nula plantea tasas poblacionales iguales; la alternativa, tasas diferentes. Se fija un nivel de significación de 0,05 antes del análisis.
+
+```python
+from math import sqrt, erfc
+
+compras_a, n_a = 200, 23739
+compras_b, n_b = 182, 22588
+tasa_a = compras_a / n_a
+tasa_b = compras_b / n_b
+alfa = 0.05
+
+# Proporcion comun y error estandar bajo H0
+p = (compras_a + compras_b) / (n_a + n_b)
+error = sqrt(p * (1-p) * (1/n_a + 1/n_b))
+z = (tasa_a - tasa_b) / error
+p_valor = erfc(abs(z) / sqrt(2))
+
+print(f"A: {tasa_a:.3%}; B: {tasa_b:.3%}")
+print(f"Diferencia: {100*(tasa_a-tasa_b):.3f} puntos porcentuales")
+print(f"z: {z:.3f}; valor p: {p_valor:.3f}")
+if p_valor < alfa:
+    print("Se rechaza H0")
+else:
+    print("No se rechaza H0")
+```
+
+### Resultado e interpretación
+
+El resultado es A = 0,842 %, B = 0,806 %, diferencia = 0,037 puntos porcentuales, z = 0,437 y valor p = 0,662. Las diferencias se calculan antes de redondear. Como 0,662 es mayor que 0,05, no se rechaza la hipótesis nula con esta prueba. No se ha demostrado que las tasas sean iguales ni que una opción sea más rentable.
+
+En el código, _p_ estima la proporción común bajo H₀, _error_ mide la variabilidad esperada de la diferencia y _z_ expresa la diferencia en unidades de ese error. La función _erfc_ permite calcular el área de las dos colas de la distribución normal estándar. El valor p no es la probabilidad de que H₀ sea verdadera.
+
+Los métodos y la dirección del contraste importan: una prueba unilateral o un procedimiento de remuestreo pueden producir otro valor p. Este anexo ilustra una elección concreta y complementa la explicación conceptual del capítulo. Archivo ejecutable: [ejemplo_ab_angel.py](ejemplo_ab_angel.py).
+
+# Teoría – Capítulo 3 - Parte 2: Experimentos Estadísticos y Pruebas de Significancia
+
+Este capítulo introduce los fundamentos de las pruebas de significancia estadística, el remuestreo (_resampling_), el valor _p_ y la prueba **t**, herramientas utilizadas para determinar si las diferencias observadas entre grupos pueden atribuirse al azar o representan un efecto estadísticamente significativo.
+
+---
