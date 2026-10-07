@@ -1,4 +1,5 @@
 # Statistical Experiments and Significance Testing
+
 ---
 
 # 1. Pruebas A/B y pruebas de hipótesis
@@ -112,7 +113,6 @@ Las pruebas A/B permiten comparar dos alternativas bajo un diseño experimental.
 Las pruebas de hipótesis complementan esta comparación al evaluar los resultados respecto de una hipótesis nula. Distinguir entre hipótesis nula y alternativa, así como entre pruebas unilaterales y bilaterales, permite formular con claridad la pregunta que se desea responder.
 
 Finalmente, una diferencia observada no debe confundirse con una demostración automática de superioridad. El aporte principal de estos temas es aprender a tomar decisiones a partir de evidencia, reconociendo que los resultados de una muestra también están sujetos a variación aleatoria.
-
 
 # 2. Resampling (Remuestreo)
 
@@ -565,12 +565,11 @@ Conceptos y términos clave para determinar la potencia estadística y el tamañ
 - **Potencia estadística ($1 - \beta$):** es la probabilidad de detectar verdaderamente el tamaño de un efecto dado con un tamaño de muestra determinado, evitando así cometer un **error de Tipo II** (falso negativo).
 - **Nivel de significación ($\alpha$):** el umbral de riesgo o nivel de significación estadística bajo el cual se realizará la prueba, definiendo la máxima probabilidad tolerable de cometer un **error de Tipo I** (falso positivo).
 
-- 
+-
+
 ## Referencia bibliográfica
 
 Bruce, P., Bruce, A., & Gedeck, P. (2020). _Practical statistics for data scientists: 50+ essential concepts using R and Python_ (2nd ed.). O’Reilly Media.
-
-Secciones consultadas: “A/B Testing”, pp. 88–92, y “Hypothesis Tests”, pp. 93–96. La numeración corresponde a las páginas impresas del libro. Texto adaptado y explicado en español; figuras de elaboración propia.
 
 ## Anexo. Ejemplo en Python
 
