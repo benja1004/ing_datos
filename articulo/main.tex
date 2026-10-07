@@ -1,0 +1,55 @@
+% ============================================================
+%  ARTÍCULO — Plantilla (cascarón) formato "Software Impacts"
+%  Archivo raíz: compila ESTE archivo (main.tex)
+%  Compilar con: pdflatex main.tex
+% ============================================================
+\documentclass[11pt,a4paper,twocolumn]{article}
+
+% ---------- Paquetes ----------
+\usepackage[utf8]{inputenc}          % acentos y caracteres especiales
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}                 % fuentes escalables (necesarias para microtype)
+\usepackage[english]{babel}          % idioma (cambia a "spanish" si lo quieres en español)
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{graphicx}                % imágenes
+\usepackage{booktabs}                % tablas con líneas horizontales limpias
+\usepackage{array}                   % anchos de columna en tablas
+\usepackage{amsmath,amssymb}         % ecuaciones
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{figures/}}            % carpeta de imágenes
+
+% ---------- Título y autores (completar) ----------
+\title{\textbf{Título del artículo}}
+\author{%
+  Autor 1\textsuperscript{a}, Autor 2\textsuperscript{b}\\[2pt]
+  \small
+  \textsuperscript{a} Afiliación 1\\
+  \textsuperscript{b} Afiliación 2
+}
+\date{}
+
+\begin{document}
+
+% ============================================================
+%  PORTADA (título, autores, keywords, abstract, code metadata)
+%  Se escribe a ANCHO COMPLETO antes de pasar a dos columnas.
+% ============================================================
+\twocolumn[
+  \input{sections/00_frontmatter}
+]
+
+% ============================================================
+%  CUERPO DEL ARTÍCULO (dos columnas)
+%  Cada sección está en un archivo aparte dentro de /sections
+% ============================================================
+\input{sections/01_motivacion}
+\input{sections/02_descripcion}
+\input{sections/03_preprocesamiento}
+\input{sections/04_pca}
+\input{sections/05_impacto}
+\input{sections/06_conclusion}
+\input{sections/07_backmatter}
+
+\end{document}

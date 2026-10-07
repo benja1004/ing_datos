@@ -1,0 +1,807 @@
+\title{Plantilla de proyecto de fin de estudios para la UPM}
+\author{Santa Tecla \and San Blador}
+\bibauthor{Tecla, S. \and Blador, S.}
+\director{San Bláster \and Panflerto Díaz}
+
+\abstract{spanish}{
+    El resumen de un \acrlong{pfg} condensa en tres o cuatro párrafos el contenido de la memoria. \textbf{Condensado no quiere decir incompleto}. Debe contener la información más destacable más o menos en el siguiente orden: propósito y objetivos, metodología empleada, resultados obtenidos y conclusiones principales. 
+    
+    Debe ocupar entre media y una cara de folio, sin ambigüedades. Como resume todo el contenido, ni que decir tiene que deberá ser lo último que escribas.
+}
+\keywords{spanish}{Cuatro o cinco; Expresiones clave; Que clasifiquen; El proyecto; Separadas por punto y coma}
+
+\abstract{english}{
+    This section must contain the summary that we have written before in Spanish, but in English, as well as the keywords. Please, do not use Google Translate directly without reviewing the technical terms.
+}
+\keywords{english}{Four or five; Key Expressions; Summarising; Our Project; Separated by semicolons}
+
+% Opcional
+\reportquotation{
+    Oigo y olvido, veo y recuerdo, hago y aprendo.
+}{Confucio}
+
+% Opcional
+\acknowledgements{
+    Agradecimientos que se quieran dar. Si no se quieren añadir, es tan sencillo como eliminar la entrada \texttt{\textbackslash acknowledgements} del fichero. Pero recuerda que las abuelas son de lo más bonito que existe en este mundo, y a ellas les hace mucha ilusión aparecer aquí.
+}
+
+\begin{document}
+
+\chapter{Introducción}
+\label{ch:introduccion}
+
+La introducción a un trabajo de fin de estudios es el punto de entrada a todo el trabajo realizado y se considera la más importante después del resumen, donde se resume todo el trabajo. Hay que dejar claro \textbf{qué} se ha hecho y el \textbf{porqué} de su importancia. Intenta generar expectativa. Un gancho típico suele ser discutir sobre un dato relevante o controvertido, o plantear una pregunta pertinente en lo que se está trabajando.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/romani-ite-domun}
+    \caption{Tutor y cotutor asegurándose de que el estudiante \enquote{deja claro el \textbf{qué} y el \textbf{porqué}} sin dejar de lado por supuesto los errores de ortografía y formato. Fuente: \textit{Life of Brian} (1979).}
+    \label{fig:brian-latin}
+\end{figure}
+
+\section{Motivación}
+\label{s:motivacion}
+
+¿Qué factores han hecho que te decantes por este tema? No se refiere a hablar de que \enquote{siempre me apasionó el preprocesamiento de datos} o que \enquote{quería ampliar mi horizonte espiritual}. Es más bien buscar el impacto que este trabajo puede tener en nuestro entorno (medioambiental, social, tecnológico, \ldots).
+
+Algunas fuentes donde encontrar este tipo de motivaciones pueden ser las revistas especializadas, periódicos, organismos de estandarización, \glspl{ong}, etcétera.
+
+La justificación no es más que el arte de defender que tu idea merece existir. Para ello, debes demostrar que: (i) el problema realmente existía y no te lo has inventado tú un martes a las tres de la mañana, (ii) hay ciencia real detrás y no solo optimismo, y (iii) el mundo será un lugar un poco más ordenado gracias a tu aportación. Si no puedes convencerles de esto, al menos convénceles de que tu alternativa es más barata.
+
+Puede ser interesante incluir en esta sección la \textbf{justificación}, que no es más que el arte de defender que tu idea merece existir. Para ello, debes demostrar que: (i) el problema realmente existía y no te lo has inventado; (ii) hay ciencia real detrás y no solo optimismo; y (iii) el mundo será un lugar un poco más ordenado gracias a tu aportación. Y si no puedes convencerles de esto, al menos convéncelos de que tu alternativa es más barata.
+
+\section{Objetivos}
+
+Esta sección es \textbf{obligatoria} y determina la \textbf{finalidad} del proyecto. Suele encajar en una de las siguientes categorías:
+
+\begin{itemize}
+    \item \textbf{Contraste} o validación de una hipótesis, típico de un \gls{pfm}.
+    \item \textbf{Desarrollo} o diseño de algo (\textit{hardware}, sistemas, edificios), común en ingenierías.
+    \item \textbf{Estudio} de un tema que deduce o descubre nuevo conocimiento, típico en ciencias puras y humanidades.
+\end{itemize}
+
+Nos resultan muy útiles para evaluar el éxito del proyecto, porque así, en las conclusiones, podemos indicar qué objetivos se han logrado y cuáles no, y el porqué. Para poder decir si un objetivo se ha cumplido, debe ser (i) \textbf{acotado en el tiempo} --- así se puede planificar --- (ii) \textbf{medible} --- podemos cuantificar su éxito --- (iii) \textbf{específico} --- evitando así tareas irrelevantes --- (iv) \textbf{alcanzable} --- asegurando su finalización --- y (v) \textbf{relevante} --- es decir, relacionado con el campo de estudio ---.
+
+\chapter{Estado de la cuestión}
+\label{ch:sota}
+
+Este capítulo (\autoref{fig:simpsons-monkeys}) demuestra al tribunal que, antes de picar código o soldar placas, has comprobado si alguien ya ha resuelto tu problema. Reinventar la rueda es malo; reinventarla en forma de triángulo y sin documentar es un suspenso directo. En esencia, este capítulo responde a una pregunta: \textbf{¿qué se ha hecho hasta hoy en este campo y qué herramientas existen?}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/simpsons-monkeys}
+    \caption{Representación en alta fidelidad de la primera fase de redacción del estado de la cuestión de la memoria. Fuente: \textit{The Simpsons}.}
+    \label{fig:simpsons-monkeys}
+\end{figure}
+
+\notebox{
+    \textbf{¿\enquote{Estado del arte} o \enquote{Estado de la cuestión}?} Lingüísticamente, \enquote{estado del arte} es un calco del inglés \textit{state of the art}. La Academia recomienda \enquote{estado de la cuestión} o \enquote{estado de la técnica}. Pero \enquote{estado del arte} está tan asentado en la jerga ingenieril que, si usas la forma normativa, algún miembro del tribunal podría mirarte raro. Usa la que prefieras: es una batalla lingüística que en ingeniería hemos dado por perdida.}
+
+\section{¿Metemos aquí el \enquote{marco teórico}?}
+
+Es probable que alguna vez veas este capítulo como \enquote{marco teórico y estado del arte}, o que antes de este haya otro que se llame \enquote{marco teórico}. Incluso puede que ni lo veas y lo estés leyendo en el estado de la cuestión porque el autor no se ha decidido a entender las diferencias. ¿De qué depende? Del peso de tu proyecto.
+
+El \textbf{marco teórico} explica la ciencia base ---las matemáticas de tu red neuronal, el patrón \gls{mvc}, \ldots---. Si tu proyecto requiere explicar muchísima teoría pesada antes de que el lector entienda de qué le hablas, dale su propio capítulo. Si, por el contrario, la teoría es estándar y lo importante es qué tecnologías vas a usar, inclúyelo todo en el este capículo utilizando una estructura similar a la siguiente:
+
+\begin{enumerate}
+    \item \textbf{Fundamentos teóricos}: La ciencia base.
+    \item \textbf{Estado de la cuestión}: Lo que hace el resto del mundo con esa ciencia hoy.
+    \item \textbf{Análisis comparativo}: Por qué lo tuyo es mejor (o al menos, por qué es tu opción).
+\end{enumerate}
+
+\section{¿Cómo estructurar este capítulo?}
+
+Desde luego, no lo trates como un vertedero donde ir tirando enlaces a la Wikipedia y resúmenes de tutoriales de YouTube. Debe tener un hilo conductor. Aquí te proponemos un par de formas muy comunes de estructurarlo para parecer un ingeniero de provecho:
+
+\begin{enumerate}
+    \item \textbf{Estructura temática}: Agrupas la información por conceptos. Si haces un proyecto sobre un sistema de riego inteligente, tendrás una subsección para \enquote{sistemas empotrados actuales}, otra para \enquote{protocolos de comunicación \acrshort{iot}} y otra para \enquote{sensores de humedad}. Es la estructura más lógica y la que menos dolores de cabeza suele dar.
+    \item \textbf{Estructura cronológica} (\autoref{fig:12monkeys-timeline}: Consiste en explicar cómo ha evolucionado un problema a lo largo del tiempo. Hay tribunales a los que les gusta, y a otros que les estomaga, así que, a menos que te guste a ti, evítala. Generalmente, a los tribunales les importa menos saber cómo se hacían las cosas en 1984; prefieren saber qué vas a hacer tú la semana que viene.
+\end{enumerate}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/12-monkeys-timeline}
+    \caption{Típico intento de estructuración de marco teórico de forma cronológica antes de que el autor decida que el tiempo es un círculo plano y sin sentido. Fuente: \textit{12 Monos} (1995).}
+    \label{fig:12monkeys-timeline}
+\end{figure}
+
+\section{El análisis comparativo}
+
+Da igual la estructura que elijas, todo este capítulo debe converger en una sección final que tendrás que nombrar \textbf{análisis comparativo y selección}, o algo muy, muy similar.
+
+De nada sirve explicar diez \textit{frameworks} diferentes si al final no justificas por qué has elegido usar uno en concreto. Haz una tabla comparativa, pon notas, destaca pros y contras, y concluye con firmeza. Aquí actúas como ingeniero, tomando una decisión técnica fundamentada. Y si la verdadera razón por la que elegiste \textit{Python} es \enquote{porque es el único lenguaje que entiendo qué me está contando cuando me da un error}, disfrázalo diciendo que \enquote{destaca por su amplia comunidad, soporte de librerías y ciclo de desarrollo ágil}.
+
+\chapter{Metodología y desarrollo}
+\label{ch:desarrollo}
+
+Este es el núcleo de la memoria. La introducción era la promesa y el estado de la cuestión, la excusa. Este capítulo es la realidad: explicas paso a paso cómo has convertido una idea abstracta en algo tangible, o al menos en algo que compila.
+
+Los tribunales valoran el orden tanto como detestan el código sin comentar. Conviene estructurar este capítulo en bloques claros y cronológicamente coherentes. Las siguientes secciones son los bloques clave a tener en cuenta; no tienen por qué llamarse así, pero el concepto que tratan debe aparecer en toda la memoria.
+
+\section{Gestión y planificación}
+
+
+Esta sección tiene como objetivo convencer al lector de que todo obedecía a un plan maestro y que todo lo ocurrido después ha sido calculado, ignorando que la mayor parte del desarrollo real se rige por las leyes del caos y de la cafeína.
+
+\begin{itemize}
+    \item \textbf{Metodología de trabajo}: ¿Has usado metodologías ágiles porque suena moderno? ¿El modelo en cascada porque aunque nunca funciona todo el mundo lo entiende?
+    \item \textbf{Planificación temporal}: El Diagrama de Gantt, hermosa obra de arte geométrica que describe cómo habrían ido las cosas en un universo paralelo donde nadie enferma, los servidores nunca se caen y las librerías de terceros no cambian sin avisar.
+    \item \textbf{Viabilidad y presupuesto}: Calcula y presenta en tablas las horas de ingeniería, licencias y componentes de \textit{hardware} consumidos por el proyecto.
+\end{itemize}
+
+\section{Especificación y diseño}
+
+Aquí es donde se diseñan los planos de la esfera Dyson antes de encargar el acero.
+
+\begin{itemize}
+    \item \textbf{Análisis de requisitos}: ¿Qué debe hacer tu sistema? Y, a veces, es más importante, ¿qué \textit{no} debe hacerse? En \textit{software}, serán, por ejemplo, casos de uso, historias de usuarios, etcétera; en computadores, restricciones de latencia o consumo energético; y en datos, necesidades de volumen y tiempos de inferencia.
+    \item \textbf{Arquitectura y diseño}: Incluye diagramas de clases, topología de la red o el \textit{pipeline} de datos. Básicamente, todo lo necesario para que otro ingeniero pueda replicar tu trabajo sin tener que recurrir a ti en horas intempestivas.
+\end{itemize}
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=\textwidth]{figures/simpsons-the-homer.png}
+    \caption{Resultado directo de análisis de requisitos donde el cliente especificó claramente \enquote{qué debe hacer el sistema}. Fuente: \textit{The Simpsons}.}
+    \label{fig:simpsons-requirements}
+\end{figure}
+
+\section{Fase experimental}
+
+También vale \enquote{implementación}, por si te parece más chulo. Aquí no hay que pegar las diez mil líneas de código del proyecto (para eso están los anexos o, mejor, tu repositorio), pero sí explicar la base tecnológica.
+
+Habla de tu \textbf{entorno de desarrollo} (lenguajes, librerías, \textit{frameworks}) y detalla el \textbf{proceso de construcción}. Si es un modelo predictivo, explica cómo limpiaste los datos y entrenaste la red; si es \textit{hardware}, cómo ensamblaste e integraste los componentes; si es \textit{software}, cómo resolviste los cuellos de botella más complejos.
+
+\notebox{
+    \textbf{\enquote{En mi máquina funciona}}: Usa esta sección para explicar cómo despliegas tu solución (contenedores de \textit{Docker}, \textit{scripts}, servicios en la nube) y demostrar que tu proyecto funciona más allá de tu portátil.
+}
+
+\section{Estrategia de pruebas}
+
+Aquí deberías explicar \enquote{solo} cómo has planeado intentar destruir tu propia creación y cómo has fallado miserablemente. Define tu plan de evaluación. ¿Vas a usar pruebas unitarias y de integración? ¿Vas a someter al clúster a pruebas de estrés? ¿Qué métricas vas a usar para validar tu modelo (precisión, \textit{F1-score}, matrices de confusión)? 
+Esta sección demuestra madurez (\autoref{fig:simpsons-tests}, y es muy importante por dos razones: (i) casi nadie la pone, así que vas a destacar, y (ii) cuando todo el mundo la ponga, si no la pones, te va a penalizar. Moraleja: escríbela.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/simpsons-testing}
+    \caption{Usuario de pruebas simulando un entorno de alta disponibilidad y tolerancia a fallos. Fuente: \textit{The Simpsons}.}
+    \label{fig:simpsons-tests}
+\end{figure}
+
+Y una recomendación para el proyecto y tu futuro: El código que funciona a la primera es siempre motivo de sospecha y revisión, nunca de celebración.
+
+\chapter{Resultados y discusión}
+\label{ch:resultados}
+
+¿Has visto \enquote{Un cadaver a los postres} (\autoref{fig:murder-by-death})? Probablemente no, pero deberías. Este capítulo sería la típica escena de película de misterio donde el detective reune a todos en el salón para revelar al asesino. Aquí es donde se descubre si todo el esfuerzo descrito en los capítulos anteriores ha servido para algo.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{figures/murder-by-death.png}
+    \caption{\enquote{Un cadaver a los postres} es una sátira marvillosa de las películas de misterio. Fuente: \textit{Murder by death}}
+    \label{fig:murder-by-death}
+\end{figure}
+
+\notebox{
+    \textbf{¿Juntos o separados?} Hay tutores que prefieren que los resultados y las conclusiones vayan amontonados en un único capítulo final. Aunque tiene su lógica narrativa, en esta plantilla hemos decidido separarlos. Los resultados merecen su propio espacio para respirar de forma objetiva antes de que te pongas filosófico con las conclusiones.
+}
+
+\section{Exposición de los resultados}
+
+Aquí es donde ejecutas las pruebas que planeaste en el capítulo anterior y muestras lo que realmente ha sucedido. Pero ojo, mostrar no es vomitar números en un papel.
+
+Usa gráficas, tablas y diagramas. A nadie le gusta leer un párrafo que dice \enquote{el experimento A dio 4, el B dio 5 y el C provocó una pequeña explosión en el laboratorio, cuando la tutora despertó todo fueron risas con los paramédicos}. Visualízalo. Si tienes capturas de pantalla de la aplicación funcionando, este es un buen lugar para poner las más relevantes (el resto, a los anexos).
+
+\section{Discusión}
+
+Esta es la parte de ingeniería pura. Es la parte donde tenemos que interpretar los datos que acabamos de exponer elegantemente en la sección anterior (\autoref{fig:hail-mary-science}).
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/project-hail-mary.png}
+    \caption{Tutor (izquierda) y estudiante (derecha) en modo \textit{relax} tratando de entender por qué narices la red neuronal ha aumentado su precisión un 1\% tras eliminar datos que creían correctos del \textit{dataset}. Fuente: \textit{Project Hail Mary}.}
+    \label{fig:hail-mary-science}
+\end{figure}
+
+¿Por qué el modelo predictivo tiene un \qty{99}{\percent} de precisión?\footnote{Alerta de \textit{spoiler}: Lo más probable es que hayas metido la variable objetivo dentro del set de entrenamiento. El universo es así de cruel.}. ¿Por qué la latencia subió en la prueba de estrés? Nuestra recomendación es que trates de explicar todo, los éxitos con modestia y los fracasos con honestidad.
+
+\chapter{Conclusiones}
+\label{ch:conclusiones}
+
+Y se acabó, aquí es donde haces balance de tu vida académica reciente y convences al tribunal de que mereces el título de graduado. Para escribir las conclusiones, debes hacer un viaje temporal hasta el Capítulo 1, buscar la lista de \textbf{objetivos} que prometiste cumplir y responder a ellos uno por uno.
+
+
+¿Se cumplió el objetivo principal? Bien. ¿Se cumplieron los específicos? Detállalo. Eso sí, la regla de oro de las conclusiones: \textbf{NUNCA introduzcas información nueva aquí}. Si no has hablado de bases de datos no relacionales en toda la memoria, no digas de repente en la conclusión que \enquote{MongoDB habría sido mucho mejor opción}.
+
+\section{Líneas de trabajo futuro}
+
+También conocido en el ámbito académico como \enquote{todo aquello que he terminado borrando de objetivos que no he hecho porque la fecha límite era ayer} (\autoref{fig:futurama-future}).
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/futurama-farnsworth.png}
+    \caption{Autor prometiendo cosas absurdamente complejas para el futuro porque ya no estará aquí para programarlas. Fuente: \textit{Futurama}.}
+    \label{fig:futurama-future}
+\end{figure}
+
+Aquí debes proponer mejoras \textbf{realistas} para quienes quieran continuar con el proyecto y no sepan cómo. Escalar la arquitectura a la nube, añadir una interfaz gráfica intuitiva o entrenar el modelo con un \textit{dataset} más grande son clásicos atemporales que nunca decepcionan.
+
+\section{Impacto ético, social y medioambiental}
+
+La normativa de la UPM obliga a que todo trabajo de fin de estudios reflexione sobre cómo afecta el proyecto desarrollado al mundo real, así que debes evaluar sus consecuencias desde varios frentes:
+
+\begin{itemize}
+    \item \textbf{Impacto ético}: ¿Cómo afecta tu proyecto a las personas y a la sociedad? Aquí se puede hablar sobre la privacidad de los datos, la accesibilidad, o sobre si el algoritmo de \acrshort{ia} usado tiene sesgos ocultos (\autoref{fig:terminator-ethics}).
+
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=\textwidth]{figures/terminator-ethics}
+        \caption{Evaluación a largo plazo del \enquote{impacto ético y social} tras descubrir que el algoritmo de desarrollado presentaba ciertos sesgos ocultos de dominación mundial. Fuente: \textit{Terminator 2} (1991).}
+        \label{fig:terminator-ethics}
+    \end{figure}
+
+    \item \textbf{Impacto económico}: Todo tiene un coste. Incluso si has usado \textit{software} libre, tu tiempo como ingeniero tambien cuesta dinero. Reflexiona sobre la viabilidad económica de tu solución, el ahorro que supone frente a alternativas comerciales, o los costes de despliegue y mantenimiento a largo plazo.
+    \item \textbf{Impacto ambiental}: El mundo digital consume recursos físicos. El \textit{cloud} no está en las nubes; son naves industriales llenas de servidores consumiendo vatios. Reflexiona sobre la eficiencia energética de tu código, el ciclo de vida del \textit{hardware} que utilizas o la huella de carbono derivada de entrenar tus modelos.
+\end{itemize}
+
+\notebox{
+    \textbf{El comodín de los \gls{ods}}: Y si quieres redondear esta sección, enmarca el proyecto dentro de los \gls{ods} de la \gls{onu}. Busca cuáles de los 17 objetivos se alinean con tu trabajo y justifícalo, pero eso sí, siendo realista y aplicando el sentido común: no intentes convencer al tribunal de que tu base de datos para gestionar el inventario de una ferretería va a lograr el Hambre Cero (ODS 2).
+}
+
+\appendix
+
+\chapter{¿Cómo usar esta plantilla?}
+\label{ch:guia-supervivencia}
+
+Si estás leyendo esto, es probable que el pánico del último año de carrera empiece a hacer efecto. No te preocupes. Esta plantilla ha sido diseñada para que te centres en el contenido y dejes que \LaTeX\ se encargue del resto. A continuación, se detalla el flujo mínimo de trabajo para no romper nada.
+
+\section{El flujo de compilación}
+
+Escribir en \LaTeX\ no es como usar un procesador de textos, donde lo que ves es lo que hay. Aquí escribes código y luego cruzas los dedos para que compile. El orden sagrado para que las referencias, los acrónimos y el glosario aparezcan en su sitio es el siguiente:
+
+\begin{enumerate}
+    \item \textbf{Compilación principal}: Ejecuta \texttt{pdflatex report.tex}; esto genera el borrador inicial.
+    \item \textbf{Indexación de glosarios}: Ejecuta la herramienta de glosarios (mediante el comando \texttt{makeglossaries report} o dejando que tu editor moderno lo haga solo).
+    \item \textbf{Indexación de bibliografía}: Ejecuta \texttt{biber report} para procesar tus citas.
+    \item \textbf{Compilación final}: Ejecuta \texttt{pdflatex} una o dos veces más. \LaTeX\ repasa sus referencias para asegurarse de que las páginas no cambian por tablas u otros elementos, algo heredado de cuando la memoria era limitada.
+\end{enumerate}
+
+\section{Estructura de ficheros recomendada}
+
+Aunque puedes meter las 80 páginas de tu memoria en \texttt{report.tex}, eso es como limpiar una habitación metiendo todo bajo la cama: funciona, pero luego es una pesadilla encontrar algo. Te recomendamos la siguiente estructura:
+
+\begin{itemize}
+    \item \textbf{\texttt{chapters/}}: Un fichero \texttt{.tex} para cada capítulo y anexo.
+    \item \textbf{\texttt{figures/}} y \textbf{\texttt{sources/}}: Directorios separados para imágenes y fuentes.
+\end{itemize}
+
+\chapter{Cómo redactar la memoria}
+\label{ch:componentes-avanzados}
+
+Ahora vamos a hablar de aquellos componentes que separan un trabajo de instituto de una obra de arte de la ingeniería.
+
+\section{Código fuente}
+
+Picar código es tu trabajo; que quede legible, es el de la plantilla. Dispones de tres herramientas para invocar código según su gravedad:
+
+\begin{itemize}
+    \item \textbf{En línea}: Para variables sueltas como \lstinline|print("Hola")| (usando \texttt{\textbackslash lstinline}) o nombres de archivo como \texttt{main.py} (usando \texttt{\textbackslash texttt}).
+    \item \textbf{Bloques manuales}: Entornos \texttt{lstlisting} para ejemplos breves que escribes directamente en la memoria.
+    \item \textbf{Importación directa}: El método profesional. Con \texttt{\textbackslash lstinputlisting\{sources/archivo.py\}} traes el código real directamente desde tu repositorio. Así, si tu programa cambia (y cambiará), tu memoria se actualizará sola en la siguiente compilación.
+\end{itemize}
+
+\section{Elementos flotantes}
+\label{s:flotantes}
+
+Los elementos \enquote{flotantes} son bloques de contenido (principalmente figuras y tablas) que \LaTeX se mueven libremente por la página hasta encontrar el lugar tipográficamente perfecto; esto, por supuesto, según él.
+
+Como de lo único que nos tenemos que preocupar al principio es de escribir el contenido y no del \enquote{cómo queda}, hay que seguir la siguiente máxima:
+
+\begin{enumerate}
+    \item \textbf{Declara el elemento flotante justo después del párrafo donde lo referencias por primera vez}. Así, siempre estará lo más cerca posible y el lector sabrá de qué se trata antes de verlo.
+\end{enumerate}
+
+Si, después de escribir todo el documento, la imagen ha acabado en un lugar ridículo, entonces es el momento de forzar su comportamiento usando los especificadores de la tabla~\ref{tab:floats-options}.
+
+\begin{table}[ht]
+    \caption{\label{tab:floats-options}Opciones de posicionamiento para elementos flotantes}
+    \centering
+    \begin{tabularx}{\textwidth}{@{}lX@{}}
+        \toprule
+        \textbf{Especificador} & \textbf{Acción} \\
+        \midrule
+        \texttt{H} & Colocar \textbf{exactamente aquí}. Úsalo en caso de desesperación absoluta. \\
+        \texttt{h} & Colocar \textit{aproximadamente aquí} (\textit{here}). \\
+        \texttt{t} & Colocar al comienzo de la página (\textit{top}). \\
+        \texttt{b} & Colocar al final de la página (\textit{bottom}). \\
+        \texttt{p} & Colocar en una página exclusiva para elementos flotantes. \\
+        \texttt{!} & Forzar la posición ignorando las reglas estéticas internas de \LaTeX. \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Figuras}
+\label{s:figuras}
+
+Insertar una imagen normal es trivial. Usamos el entorno \texttt{figure}, la centramos, definimos su ancho relativo al texto (\lstinline|\textwidth|), y le ponemos su pie de foto y etiqueta, como vemos en el siguiente ejemplo:
+
+\begin{lstlisting}[language=TeX]
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/vault-boy.png}
+    \caption{\textit{Vault Boy} aprueba esta maquetación}
+    \label{fig:img-vault-boy}
+\end{figure}
+\end{lstlisting}
+
+Lo cuál quedaría como se ve en la \autoref{fig:img-vault-boy}
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figures/vault-boy.png}
+    \caption{\textit{Vault Boy} aprueba esta maquetación}
+    \label{fig:img-vault-boy}
+\end{figure}
+
+\notebox{
+    \textbf{Consejo de resolución:} Siempre que puedas, intenta usar formatos vectoriales (PDF, EPS o SVG convertidos). Si usas PNG o JPG y la imagen tiene texto dentro, asegúrate de que no se pixele al imprimir. Un diagrama borroso queda casi peor que una falta de ortografía.
+}
+
+¿Y si quieres poner tres imágenes juntas compartiendo el mismo bloque principal, pero con subtítulos independientes? Hacemos uso del entorno \texttt{subfigure}. Fíjate en cómo el ancho de cada subfigura se define respecto al total y el de la imagen respecto a su subfigura:
+
+\begin{lstlisting}[language=tex]
+\begin{figure}[htpb]
+    \centering
+    \begin{subfigure}{.3\textwidth}
+        \includegraphics[width=\linewidth]{figures/vault-boy.png}
+        \caption{\label{fig:sub-1} Opción A}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.3\textwidth}
+        \includegraphics[width=\linewidth]{figures/vault-boy.png}
+        \caption{\label{fig:sub-2} Opción B}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.3\textwidth}
+        \includegraphics[width=\linewidth]{figures/vault-boy.png}
+        \caption{\label{fig:sub-3} Opción C}
+    \end{subfigure}
+    \caption{\label{fig:subfigures} Comparativa de múltiples Vault Boys.}
+\end{figure}
+\end{lstlisting}
+
+Este fragmento de código quedaría como muestra la \autoref{fig:subfigures}.
+
+\begin{figure}[htpb]
+    \centering
+    \begin{subfigure}{.3\textwidth}
+        \includegraphics[width=\linewidth]{figures/vault-boy.png}
+        \caption{\label{fig:sub-1} Opción A}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.3\textwidth}
+        \includegraphics[width=\linewidth]{figures/vault-boy.png}
+        \caption{\label{fig:sub-2} Opción B}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.3\textwidth}
+        \includegraphics[width=\linewidth]{figures/vault-boy.png}
+        \caption{\label{fig:sub-3} Opción C}
+    \end{subfigure}
+    \caption{\label{fig:subfigures} Comparativa de múltiples Vault Boys.}
+\end{figure}
+
+\subsection{Tablas}
+
+Las tablas (que en realidad son cuadros, pero hemos acabado usando tabla para todo) son fundamentales para presentar información estructurada de un vistazo. 
+
+Sin embargo, crear tablas complejas directamente picando código en \LaTeX\ es una de las principales causas de pérdida de cabello en estudiantes de ingeniería. Las barras verticales, los \texttt{multicolumn}, los \texttt{multirow}\ldots son una pesadilla.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=\textwidth]{figures/shining-tables}
+    \caption{Estudiante tratando de centrar un \texttt{multicolumn} a mano. Fuente: \textit{The Shining} (1980).}
+    \label{fig:shining-tables}
+\end{figure}
+
+Para no perder años de tu vida, la respuesta es: \textbf{\href{https://www.tablesgenerator.com/}{TablesGenerator.com}}. Entra en esa web, diseña tu tabla, marca la opción de usar el estilo \textit{booktabs}, dale a generar y pega el código aquí. Fin del problema.
+
+\section{Enlaces de hipertexto}
+
+En pleno siglo XXI, una memoria debe ser navegable. El paquete \texttt{hyperref} ya está configurado en la plantilla para que los enlaces funcionen y tengan un color decente (basado en tu escuela). Tienes dos herramientas principales:
+
+\begin{itemize}
+    \item \textbf{\texttt{\textbackslash url\{https://upm.es\}}}: Imprime el enlace tal cual, con una fuente monoespaciada, y lo hace clicable. Ideal para la bibliografía o pies de página. Resultado: \url{https://upm.es}
+    \item \textbf{\texttt{\textbackslash href\{https://upm.es\}\{Texto\}}}: Oculta la URL fea detrás de un texto legible y clicable. Ideal para el cuerpo de la memoria. Resultado: \href{https://upm.es}{Página principal de la universidad}.
+\end{itemize}
+
+\section{Ecuaciones}
+\label{sec:ecuaciones}
+
+La principal razón por la que mucha gente huye hacia \LaTeX\ es para no tener que pelearse con el insufrible editor de ecuaciones de otros procesadores de texto (por no decir nombres, diremos que comienza por \textit{Word} y termina por). \LaTeX\ mantiene dos renderizadores distintos: el modo párrafo (para el texto normal) y el modo matemático. Al matemático se le invoca de distintas formas según la espectacularidad que busques.
+
+\subsection{Ecuaciones dentro del párrafo}
+
+La forma más común es la forma en línea, ideal para matemáticas que no necesitan destacar. El texto matemático se encierra entre dos signos \$ (herencia de \TeX) o entre las cadenas \textbackslash( y \textbackslash) (esto sí es \LaTeX). Veamos la frase del listado~\ref{lst:in-line-equation}:
+
+\begin{lstlisting}[language=tex,caption=Ejemplo de inserción de fórmulas en línea,label=lst:in-line-equation]
+El pequeño teorema de Fermat dice que si $p$ es un número primo, entonces, para cada número natural $a$, con $a>0$, $a^p \equiv a \pmod p$.
+\end{lstlisting}
+
+La frase quedaría integrada con total naturalidad:
+
+\begin{quote}
+El pequeño teorema de Fermat dice que si $p$ es un número primo, entonces, para cada número natural $a$, con $a>0$, $a^p \equiv a \pmod p$.
+\end{quote}
+
+\subsection{Ecuaciones en bloque}
+
+Cuando tu ecuación es demasiado grande o demasiado importante para compartir línea con la plebe, le das su propio bloque haciendo uso de los entornos \texttt{equation} o \texttt{align}. 
+
+El entorno \texttt{equation} centra la fórmula y le asigna un número de referencia automáticamente:
+
+\begin{minipage}[c]{.5\textwidth}
+\begin{lstlisting}[language=tex]
+\begin{equation}
+    \int_a^b f'(x) \, dx=f(b)-f(a)
+\end{equation}
+\end{lstlisting}
+\end{minipage}%
+\begin{minipage}[c]{.5\textwidth}
+\begin{equation}
+    \int_a^b f'(x) \, dx=f(b)-f(a)
+\end{equation}
+\end{minipage}
+
+Sin embargo, si tienes varias ecuaciones seguidas y quieres que los signos igual ($=$) queden perfectamente alineados , usaremos el entorno \texttt{align} y el carácter \texttt{\&} para marcar el punto de anclaje:
+
+\begin{minipage}[c]{.5\textwidth}
+\begin{lstlisting}[language=tex]
+\begin{align}
+    u  &= \arctan x \\
+    du &= \frac{1}{1 + x^2}dx
+\end{align}
+\end{lstlisting}
+\end{minipage}%
+\begin{minipage}[c]{.5\textwidth}
+\begin{align}
+    u  &= \arctan x \\
+    du &= \frac{1}{1 + x^2}dx
+\end{align}
+\end{minipage}
+
+Por último, si estás escribiendo una ecuación intermedia o trivial a la que no vas a hacer referencia cruzada en el texto, puedes añadir un asterisco (\texttt{*}) al nombre del entorno para decirle a \LaTeX\ que \textbf{no la numere}:
+
+\begin{minipage}[c]{.5\textwidth}
+\begin{lstlisting}[language=tex]
+\begin{equation*}
+    e^{i\pi} + 1 = 0
+\end{equation*}
+\end{lstlisting}
+\end{minipage}%
+\begin{minipage}[c]{.5\textwidth}
+\begin{equation*}
+    e^{i\pi} + 1 = 0
+\end{equation*}
+\end{minipage}
+
+\notebox{
+    \textbf{Truco de supervivencia}: Si no te apetece aprenderte de memoria los comandos de las \num{24} letras del alfabeto griego y todos los operadores matemáticos conocidos por el ser humano, usa herramientas como \textit{Detexify} (donde dibujas el símbolo y te da el código) o \textit{Mathpix} (que extrae el código \LaTeX\ a partir de una captura de pantalla).
+}
+
+\section{Glosario y abreviaturas}
+\label{s:glosario}
+
+El glosario es ese sitio al final del documento donde explicas qué significan todas esas palabras raras y siglas que has ido esparciendo por el texto para sonar profesional. Ni que decir tiene que gestionar esto a mano es una tortura, así que la plantilla lo automatiza.
+
+En esencia, tú defines los términos (en esta plantilla van dentro del fichero \texttt{frontmatter/glossary.tex} que se incluya) y luego los invocas en el texto. \LaTeX\ se encargará de crear la lista final, ordenarla alfabéticamente y apuntar la página exacta donde se mencionan dichos términos.
+
+Existen dos tipos de criaturas en este ecosistema: los términos comunes y las abreviaturas.
+
+\subsection{Términos comunes: \texttt{\textbackslash newglossaryentry}}
+
+Para conceptos que requieren una definición en toda regla. La sintaxis se muestra en el \autoref{lst:std-glossary-entry}.
+
+\begin{lstlisting}[language={[latex]TeX},caption=Creación de términos de glosario,label=lst:std-glossary-entry]
+\newglossaryentry{hacha-batalla}{
+    name={hacha de batalla},
+    description={Herramienta antigua utilizada en combate.}
+}
+
+\newglossaryentry{python}{
+    name={Python},
+    plural={Pythonacos},
+    description={El mejor lenguaje de programación.}
+}
+\end{lstlisting}
+
+Si el término es regular, \LaTeX\ le añadirá una \enquote{s} para el plural de forma automática. Si tiene un plural raro o te quieres inventar tú uno, puedes forzarlo usando la propiedad \texttt{plural=}, como en el ejemplo de \gls{python}.
+
+\subsection{Siglas y acrónimos: \texttt{\textbackslash newabbreviation}}
+
+Estos son conceptos que no requieren definición, sino simplemente saber a qué expresión larga se refieren. La sintaxis se muestra en el \autoref{lst:new-abbreviation}).
+
+\begin{lstlisting}[language={[latex]TeX},caption=Creación de siglas y abreviaturas,label=lst:new-abbreviation]
+\newabbreviation[
+    longplural={proyectos de fin de grado},
+    shortplural={PFG}
+]{pfg}{PFG}{proyecto de fin de grado}
+\end{lstlisting}
+
+La magia de las abreviaturas es que \textbf{tienen memoria}. La primera vez que invoques la clave \texttt{pfg} en tu texto, se escribirá el nombre completo seguido de la sigla: \enquote{\acrlong{pfg}}. A partir de la segunda vez, imprimirá únicamente la sigla: \enquote{\acrshort{pfg}}. Él lleva la cuenta por ti para que no tengas que preocuparte de si ya la habías presentado antes o no.
+
+\notebox{
+    \textbf{El plural de las siglas en castellano}: En español, las siglas son invariables en la escritura. No se escribe \enquote{las \acrshort{ong}s} ni \enquote{los PDFs}, sino \enquote{las \acrshort{ong}} y \enquote{los PDF}. Por eso en el ejemplo hemos forzado el \texttt{shortplural=\{PFG\}}. Sé un buen ingeniero y no hagas llorar a la RAE.
+}
+
+\subsection{¿Cómo los invoco en el texto?}
+
+Una vez definidos en tu archivo de configuración, los llamas desde los capítulos de tu memoria utilizando los comandos de la tabla~\ref{tab:glossary-commands}. Usa siempre la misma capitalización que usarías si lo escribieses a mano.
+
+\begin{table}[ht]
+    \caption{\label{tab:glossary-commands}Comandos para invocar términos y siglas en el texto}
+    \begin{tabularx}{\textwidth}{@{}lXX@{}}
+        \toprule
+        \textbf{Comando} & \textbf{Efecto (Singular)} & \textbf{Efecto (Plural)} \\
+        \midrule
+        \texttt{\textbackslash gls\{clave\}} & Minúscula: \gls{hacha-batalla} & \texttt{\textbackslash glspl\{...\}}: \glspl{hacha-batalla} \\
+        \texttt{\textbackslash Gls\{clave\}} & Mayúscula inicial: \Gls{hacha-batalla} & \texttt{\textbackslash Glspl\{...\}}: \Glspl{hacha-batalla} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+Si por alguna razón necesitas forzar a que se imprima una forma específica de una abreviatura (ignorando si es la primera vez que aparece o no), dispones de un arsenal de comandos directos:
+
+\begin{itemize}
+    \item \texttt{\textbackslash acrshort\{pfg\}}: Imprime siempre la sigla corta (PFG).
+    \item \texttt{\textbackslash acrlong\{pfg\}}: Imprime siempre el texto largo (proyecto de fin de grado).
+    \item \texttt{\textbackslash acrfull\{pfg\}}: Imprime siempre ambas (proyecto de fin de grado (PFG)).
+\end{itemize}
+
+Todos estos comandos tienen versión en plural con \texttt{pl} al final (e.g., \texttt{\textbackslash acrshortpl\{pfg\}}).
+
+\section{Magnitudes y unidades}
+\label{sec:siunitx}
+
+Escribir unidades a mano en \LaTeX\ es una de esas cosas que parecen fáciles hasta que te das cuenta de que acabas de cometer un crimen tipográfico. Escribir \texttt{10kg} todo junto duele a la vista, y escribir \texttt{10 kg} con un espacio normal corre el riesgo de que un salto de línea deje al número atrás y el \enquote{kg} aparezca, huérfano y desorientado, al principio de la página siguiente.
+
+Para evitar esto, la plantilla incluye el paquete \texttt{siunitx}, el cual se encarga de que los números y sus unidades mantengan el espaciado perfecto y nunca se separen, pase lo que pase. Los tres mandamientos (comandos) básicos que necesitas conocer son:
+
+\begin{itemize}
+    \item \textbf{\texttt{\textbackslash num}}: Para formatear números a secas. Se encarga de poner los separadores de miles y decimales como dictan las normas. Porque 1000000 es ilegible, pero \lstinline|\num{1000000}| (\num{1000000}) demuestra que vives en una sociedad civilizada.
+    \item \textbf{\texttt{\textbackslash unit}}: Para escribir unidades sin un valor asociado. Puedes usar las abreviaturas lógicas o sus nombres completos, como \lstinline|\unit{\meter\per\second}| (\unit{\meter\per\second}).
+    \item \textbf{\texttt{\textbackslash qty}}: El rey de la casa. Une un número y una unidad en sagrado matrimonio tipográfico, como por ejemplo \lstinline|\qty{1000000}{\meter\per\second}| (\qty{1000000}{\meter\per\second})
+\end{itemize}
+
+Un ejemplo práctico (listado~\ref{lst:siunitx-example}) de cómo se debería escribir un texto técnico podría ser el siguiente:
+
+\begin{lstlisting}[language=tex, caption=Uso del paquete siunitx, label=lst:siunitx-example]
+La nave alcanzó una velocidad de \qty{299792}{\kilo\meter\per\second} (o \qty{299792}{km/s} si prefieres abreviar), consumiendo \qty{42}{\kilo\gram} de combustible para generar una potencia de \qty{1.21}{\giga\watt}.
+\end{lstlisting}
+
+Que quedaría como sigue:
+
+\begin{quote}
+La nave alcanzó una velocidad de \qty{299792}{\kilo\meter\per\second} (o \qty{299792}{km/s} si prefieres abreviar), consumiendo \qty{42}{\kilo\gram} de combustible para generar una potencia de \qty{1.21}{\giga\watt}.
+\end{quote}
+
+Fíjate en que puedes usar tanto las macros descriptivas (\texttt{\textbackslash kilo\textbackslash gram}) como su representación directa (\texttt{kg}). Ambas son válidas, pero la primera forma es mucho más robusta si alguna vez decides cambiar el formato de todo el documento.
+
+\notebox{
+    \textbf{Aviso arqueólogos de StackOverflow}: Si buscas cómo hacer esto en Internet, verás que la gente usaba los comandos \texttt{\textbackslash SI\{\}} y \texttt{\textbackslash si\{\}}. Pertenecen a una versión antigua del paquete y, aunque por retrocompatibilidad suelen funcionar, los comandos \texttt{\textbackslash qty\{\}} y \texttt{\textbackslash unit\{\}} son la forma correcta y moderna. Abraza el futuro.
+}
+
+\section{Multicolumnas}
+
+Por defecto, la plantilla escribe en una sola columna, pero en ocasiones puedes necesitar maquetar una sección comparativa o una lista de elementos cortos de forma lateral. Para ello, podemos invocar el paquete \texttt{multicol}, y el \autoref{lst:multicolumns} muestra un ejemplo.
+
+\begin{lstlisting}[language=tex, caption=Uso de texto en dos columnas, label=lst:multicolumns]
+\begin{multicols}{2}
+Este texto se maquetará en la columna de la izquierda y, cuando llegue al final del bloque o de la página, continuará de forma automática en la columna de la derecha. La documentación completa del paquete está disponible en \href{https://ctan.org/pkg/multicol}{ctan.org/pkg/multicol}.
+\end{multicols}
+\end{lstlisting}
+
+El ejemplo quedaría como sigue:
+
+\begin{multicols}{3}
+Este texto se maquetará en la columna de la izquierda y, cuando llegue al final del bloque o de la página, continuará de forma automática en la columna de la derecha. La documentación completa del paquete está disponible en \href{https://ctan.org/pkg/multicol}{ctan.org/pkg/multicol}.
+\end{multicols}
+
+\section{Notas al pie y notas de bloque}
+
+Las notas son el lugar ideal para añadir ese dato curioso que no aporta nada al discurso principal, pero que te hace parecer un erudito.
+
+\subsection{Notas al pie}
+
+Se generan con el comando \lstinline|\footnote{Texto}|, como muestra el listado \autoref{lst:footnote}.
+
+\begin{lstlisting}[language=tex, caption=Nota al pie, label=lst:footnote]
+Que quedaría tal y como estás leyendo ahora\footnote{Un ejemplo de nota al pie.}. ...
+\end{lstlisting}
+
+Que quedaría tal y como estás leyendo ahora\footnote{Un ejemplo de nota al pie.}. Eso sí, es importante usarlas con moderación, porque al final, si tu página tiene más texto en el pie que en el cuerpo, estás escribiendo dos libros a la vez.
+
+\subsection{Cajas de aviso y notas destacadas}
+
+Para llamar la atención del lector sobre un peligro inminente (como que un script borre la base de datos de producción), la plantilla incluye el entorno \texttt{notebox}:
+
+\begin{lstlisting}[language=tex, caption=Creación de una caja de notas]
+\notebox{
+    \textbf{Atención}: Compilar el documento más de 14 veces seguidas sin haber modificado ni una sola línea de código no solucionará el error, pero podría invocar al fantasma de Donald Knuth para juzgarte severamente. Avisado quedas.
+}
+\end{lstlisting}
+
+El resultado de este ejemplo quedaría como sigue:
+
+\notebox{
+    \textbf{Atención}: Compilar el documento más de 14 veces seguidas sin haber modificado ni una sola línea de código no solucionará el error, pero podría invocar al fantasma de Donald Knuth para juzgarte severamente. Avisado quedas.
+}
+
+\section{Referencias bibliográficas}
+\label{s:referencias-bibliograficas}
+
+Existen mil maneras de gestionar bibliografías en \LaTeX, cada cual más arcana que la anterior. En esta plantilla hemos elegido el camino de menor sufrimiento: el paquete \texttt{biblatex}.
+
+El flujo de trabajo es sencillo: meter todas las fuentes en el \texttt{references.bib}, las citas en el texto, y \LaTeX\ se encarga de extraerlas, ordenarlas, darles formato y crear los hipervínculos. Si metes una fuente en el fichero pero jamás la mencionas en tu memoria, \LaTeX\ pasará de ella olímpicamente en el documento final. Lo cual tiene todo el sentido del mundo.
+
+\notebox{
+    \textbf{¿Por qué las llamamos referencias y no bibliografía?} Las \textit{referencias} son \textbf{las fuentes que has citado explícitamente para dar soporte a tu texto}. La \textit{bibliografía} es todo lo que te has leído, lo hayas citado o no. En un texto científico riguroso se exige la lista de referencias. No incluyas libros solo para que parezca que has leído mucho.
+}
+
+\subsection{Rellenando el archivo \texttt{.bib}}
+
+El fichero \texttt{references.bib} es una base de datos de texto plano. Cada entrada tiene la estructura genérica que se muestra en el listado~\ref{lst:base-bibref}.
+
+\begin{lstlisting}[language=tex, caption=Estructura genérica de una entrada BibTeX, label=lst:base-bibref]
+@tipo{identificador_unico,
+    author = "Autor",
+    title = "Título de la referencia",
+    year = "Año",
+    campo = "valor",
+    ...
+}
+\end{lstlisting}
+
+El \texttt{@tipo} define qué es (\texttt{@article} para revistas, \texttt{@book} para libros, \texttt{@online} para webs, \ldots), y el \texttt{identificador\_unico} es la clave secreta que usarás para llamarlo desde el texto. 
+
+Dicho esto, ¡no lo escribas a mano! Entra en Google Scholar, IEEE Xplore o ACM Digital Library, busca tu artículo, dale al botón de \enquote{Citar}, elige el formato \textbf{BibTeX} y copia y pega el bloque directamente en tu archivo.
+
+\subsection{Citando en el texto}
+
+Para llamar a las referencias en mitad de tu redacción, tienes dos estilos principales: el narrativo (donde el autor forma parte de la frase) y el parentético (donde la cita es un mero apunte al final). Se usan tal y como muestra el listado~\ref{lst:bibref}.
+
+\begin{lstlisting}[language=tex, caption=Comandos básicos de citación, label={lst:bibref}]
+Tal y como descubrieron \cite{mcculloch1943logical}, las neuronas artificiales son una maravilla, aunque consumen mucha memoria \parencite{mcculloch1943logical}.
+\end{lstlisting}
+
+Algo que se renderizará de la siguiente manera:
+
+\begin{quote}
+Tal y como descubrieron \cite{mcculloch1943logical}, las neuronas artificiales son una maravilla, aunque consumen mucha memoria \parencite{mcculloch1943logical}.    
+\end{quote}
+
+\subsection{Más información}
+
+Si necesitas referenciar actas de congresos oscuros de 1982 o tesis doctorales no publicadas y no sabes qué campos son obligatorios, tienes toda la información del mundo sobre los tipos de entrada en \href{https://bibtex.eu/es/biblatex/}{\hologo{BibTeX}.eu}.
+
+\section{Referencias cruzadas}
+\label{s:crossref}
+
+Las etiquetas (\lstinline|\label|) son, posiblemente, el mayor invento de la composición tipográfica desde la invención de la imprenta. En un mundo civilizado, a la hora de referenciar un gráfico en un documento, uno escribe frases del estilo \enquote{[\ldots] como muestra la Figura 3}. Lo que \textbf{no} haces es escribir \enquote{[\ldots] como muestra la figura de los monigotes amarillos de la página siguiente}, porque en el momento en que añadas un párrafo antes, la figura se moverá a otra página y tu texto quedará un poco raro.
+
+Una de las propiedades más potentes de \LaTeX\ es que numera y actualiza estos enlaces automágicamente. Si añades o borras figuras, tablas, ecuaciones o capítulos enteros, los números se ajustan solos en todo el documento. Solo hay que:
+
+\begin{enumerate}
+    \item \textbf{Ponerle una etiqueta a lo que queremos referenciar} con \lstinline|\label{nombre-de-etiqueta}|. La regla de oro, escrita con la sangre de generaciones de estudiantes, es la siguiente: \textbf{la etiqueta se declara siempre después del elemento a referenciar}. Por ejemplo, si vas a etiquetar una figura o una tabla, la etiqueta debe ir \textbf{dentro o justo después del comando \texttt{\textbackslash caption}}; si es un capítulo, dentro o justo después del comando \texttt{\textbackslash caption}; y así sucesivamente.
+    \item Apuntar a la etiqueta desde donde queramos referenciarla. Hay varias formas de referenciar, tal y como muestra el \autoref{lst:basic-references} (mira, otra referencia; es que es un no parar).
+\end{enumerate}
+
+
+\begin{lstlisting}[language=tex, caption=Distintas formas de referenciar, label={lst:basic-references}]
+% 1. La referencia clásica (solo imprime el número: "3")
+Mira la Figura~\ref{fig:img-vault-boy}.
+
+% 2. La página donde vive la referencia (imprime: "14")
+La imagen está en la página~\pageref{fig:img-vault-boy}.
+
+% 3. El título del elemento referenciado
+El gráfico titulado ``\nameref{fig:img-vault-boy}''.
+
+% 4. La magia de autoref (Añade "Figura", "Capítulo" o "Tabla" por ti)
+Mira directamente la \autoref{fig:img-vault-boy}.
+\end{lstlisting}
+
+\chapter{¿Cómo ampliar la plantilla?}
+\label{ch:ampliar}
+
+Las leyes de la física dictan que ninguna plantilla de \LaTeX\ satisface el \qty{100}{\percent} de las necesidades de un estudiante de ingeniería. Si necesitas añadir tus propios paquetes o modificar comportamientos, aquí tienes las reglas del juego.
+
+\section{¿Dónde añado nuevos paquetes?}
+
+Si necesitas un paquete para maquetar diagramas de circuitos (\texttt{circuitikz}) o para dibujar autómatas (\texttt{tikz}), no los metas en mitad de un capítulo. El lugar correcto es el preámbulo de tu archivo principal \texttt{report.tex}, justo antes del comando \lstinline|\|\lstinline|begin|\lstinline|{document}|.
+
+\section{El peligro de las colisiones}
+
+A veces, dos paquetes intentan redefinir el mismo comando y todo estalla con un error críptico sobre \enquote{\textit{Command already defined}}. Si la plantilla deja de compilar tras añadir una línea, retírala inmediatamente y busca una alternativa. La plantilla ya incluye por defecto la mayoría de paquetes necesarios para gráficos, tablas, matemáticas y gestión de código.
+
+\section{Aportar a la comunidad}
+
+Como se mencionaba al principio del documento, si consigues automatizar la página de citas, arreglas un bug visual o añades una nueva titulación que no estaba listada en el \autoref{ch:escuelas-y-titulos}, no te quedes el secreto para ti mismo. Sube los cambios al repositorio de la plantilla (\url{\templaterepository}). El próximo estudiante desesperado te lo agradecerá eternamente.
+
+
+\chapter{Escuelas y títulos}
+\label{ch:escuelas-y-titulos}
+
+A continuación se describen todas las opciones de grados y títulos disponibles en la memoria.
+
+\section{Escuelas}
+
+Las escuelas disponibles se describen en el cuadro~\ref{tbl:schools}.
+
+\begin{table}
+    \centering
+    \begin{tabularx}{\textwidth}{@{}lX@{}}
+        \toprule
+        \textbf{Clave}   & \textbf{Valor} \\
+        \midrule
+        \texttt{etsiaab} & E.T.S. de Ingeniería Agronómica, Alimentaria y de Biosistemas \\
+        \texttt{etsidi}  & E.T.S. de Ingeniería y Diseño Industrial \\
+        \texttt{etsisi}  & E.T.S. de Ingeniería de Sistemas Informáticos \\
+        \bottomrule
+    \end{tabularx}
+    \caption{\label{tbl:schools} Relación entre el código de la plantilla y la escuela a la que se refiere}
+\end{table}
+
+De momento no están todas, así que si te apetece añadir la tuya, puedes contactar con los autores o modificarlo (mira el apéndice~\ref{ch:ampliar}) y enviarnos los cambios; así podemos hacerlo público con la mayor cantidad de usuarios posible.
+
+\section{Titulaciones}
+
+Cada una de las escuelas posee ciertas titulaciones que se han de añadir a la configuración.
+
+\subsection{E.T.S. de Ingeniería Agronómica, Alimentaria y de Biosistemas}
+
+La ETSIAAB tiene configurados como colores principal y de enlace el RGB $(99,178,76)$.
+
+Las titulaciones que existen la última vez que se actualizó este documento son las siguientes:
+
+\begin{itemize}
+    \item \texttt{20BT}: Grado en Biotecnología,
+    \item \texttt{20BI}: Grado en Ciencias Agrarias y Bioeconomía,
+    \item \texttt{20IG}: Grado en Ingeniería Agrícola,
+    \item \texttt{02IA}: Grado en Ingeniería Agroambiental,
+    \item \texttt{20IA}: Grado en Ingeniería Alimentaria.
+\end{itemize}
+
+\subsection{E.T.S. de Ingeniería y Diseño Industrial}
+
+La ETSIDI tiene configurados como colores principal y de enlace el RGB $(223,30,64)$.
+
+Las titulaciones que existen la última vez que se actualizó este documento son las siguientes:
+
+\begin{itemize}
+    \item \texttt{56IE}: Grado en Ingeniería Eléctrica,
+    \item \texttt{56IA}: Grado en Ingeniería Electrónica Industrial y Automática,
+    \item \texttt{56IM}: Grado en Ingeniería Mecánica,
+    \item \texttt{56IQ}: Grado en Ingeniería Química,
+    \item \texttt{56DD}: Grado en Ingeniería en Diseño Industrial y Desarrollo de Producto.
+\end{itemize}
+
+\subsection{E.T.S. de Ingeniería de Sistemas Informáticos}
+
+La ETSISI tiene configurados como colores principal y de enlace el RGB $(0,114,206)$.
+
+Las titulaciones que existen la última vez que se actualizó este documento son las siguientes:
+
+\begin{itemize}
+    \item \texttt{61CD}: Grado en Ciencia de Datos e Inteligencia Artificial,
+    \item \texttt{61CI}: Grado en Ingeniería de Computadores,
+    \item \texttt{61IW}: Grado en Ingeniería del Software,
+    \item \texttt{61SI}: Grado en Sistemas de Información,
+    \item \texttt{61TI}: Grado en Tecnologías para la Sociedad de la Información.
+\end{itemize}
+
+\chapter{Licencia}
+\label{ch:licencia}
+
+Consideramos que todo el conocimiento generado en una universidad pública ha de ser público y libre. Por ello, esta obra se publica con la licencia \textit{Creative Commons} Reconocimiento - Sin obra derivada - No comercial - Compartir igual, de tal manera que se garantiza que la obra se comparte con las mismas libertades y, así, todo el mundo puede hacer de esta obra el uso que quiera.
+
+\end{document}

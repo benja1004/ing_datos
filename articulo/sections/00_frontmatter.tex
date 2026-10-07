@@ -1,0 +1,38 @@
+% ============================================================
+%  PORTADA (a ancho completo): título, autores,
+%  ARTICLE INFO + ABSTRACT lado a lado, y tabla Code metadata.
+%  El título y los autores se definen en main.tex (preámbulo).
+% ============================================================
+
+\maketitle
+
+% ---- ARTICLE INFO (izquierda) | ABSTRACT (derecha) ----
+\noindent
+\begin{minipage}[t]{0.30\textwidth}
+  \textbf{ARTICLE INFO}\\[3mm]
+  \textbf{Keywords:}\\
+  Python\\
+  Data fusion\\
+  Data analysis\\
+  Forensic science
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.66\textwidth}
+  \textbf{ABSTRACT}\\[3mm]
+  Escribir aquí el resumen del artículo (propósito, método, resultados y conclusión en 3--4 líneas).
+\end{minipage}
+
+\vspace{5mm}
+
+% ---- CODE METADATA (tabla a ancho completo) ----
+\textbf{Code metadata}
+
+\begin{tabular}{@{} >{\raggedright\arraybackslash}p{0.42\textwidth} >{\raggedright\arraybackslash}p{0.55\textwidth} @{}}
+\toprule
+Current code version & V 1.0 \\
+Permanent link to code/repository & \url{https://github.com/...} \\
+Legal Code License & GNU General Public License (GPL) \\
+Software code languages, tools, and services used & Python, Visual Studio Code \\
+Support email for questions & correo@ejemplo.com \\
+\bottomrule
+\end{tabular}
